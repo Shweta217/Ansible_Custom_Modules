@@ -1,0 +1,17 @@
+---
+- name: cm test play
+  hosts: localhost
+  gather_facts: no
+  tasks:
+    - name: test
+      shell: echo "hi"
+    - name: tasking
+      github_repo:
+        api_key: 'put api key here'
+        name: 'testing2'
+        private: no
+        Description: "This is for test 3"
+      register: op
+    - name: op
+      debug:
+        var: op
